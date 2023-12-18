@@ -1,10 +1,11 @@
 pkgname=dssd
 pkgver=$( awk '$1 == "version" {split($3, x, "\""); print x[2]}' Cargo.toml )
-pkgrel=1
+pkgrel=2
 arch=(any)
 license=(GPL3)
 makedepends=(cargo)
 depends=(dbus)
+provides=(org.freedesktop.secrets)
 
 package() {
     cd "$startdir"
